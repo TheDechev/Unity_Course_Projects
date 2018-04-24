@@ -6,11 +6,11 @@ public class Ball : MonoBehaviour {
     public Paddle paddleObj;
     private bool hasStarted = false; 
     private Vector3 paddleToBallVector;
-    private Rigidbody2D ballrigidbody2d;
+    private Rigidbody2D ballRigidBody2D;
 
     // Use this for initialization
     void Start () {
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        ballRigidBody2D = GetComponent<Rigidbody2D>();
         paddleToBallVector = this.transform.position - paddleObj.transform.position;
 	}
 	
@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour {
 
         if(Input.GetMouseButtonDown(0))
         {
-            rigidbody2d.velocity = new Vector2(2f, 15f);
+            ballRigidBody2D.velocity = new Vector2(2f, 15f);
             hasStarted = true;
             print("mouse clicked");
         } 
